@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kather Lab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="images/home/logo.jpg" alt="Logo" />
+      <span></span>
+    </div>
+    <nav>
+      <ul id="navLinks" class="nav-links">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">RESEARCH</a></li>
+        <li><a href="#">PUBLICATIONS</a></li>
+        <li><a href="#">TEAM</a></li>
+        <li><button class="btn modern contact-btn">CONTACT</button></li>
+      </ul>
+    </nav>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </header>
+
+  <section class="hero centered">
+    <div class="background-carousel">
+      <img src="images/home/slide1.jpg" class="slide active" alt="Slide 1" />
+      <img src="images/home/slide2.jpg" class="slide" alt="Slide 2" />
+      <img src="images/home/slide3.jpg" class="slide" alt="Slide 3" />
+      <img src="images/home/slide4.jpg" class="slide" alt="Slide 4" />
+      <div class="overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <h4>Who we are?</h4>
+      <h1>KATHER LAB</h1>
+      <p>
+        We are the research group <strong>“Clinical Artificial Intelligence”</strong>: a young, diverse, and interdisciplinary group of scientists...
+      </p>
+      <div class="btn-box">
+        <button type="button" class="btn modern">RESEARCH</button>
+        <button type="button" class="btn modern github">GITHUB</button>
+      </div>
+    </div>
+
+    <div class="indicators">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </section>
+
+
+  <!-- News Section -->
+<section class="news-section">
+  <h2 class="section-title">Latest News</h2>
+
+  <div class="news-carousel-controls">
+    <button class="carousel-arrow left">&#10094;</button>
+
+    <div class="news-carousel-wrapper">
+      <div class="news-cards-carousel">
+        <!-- Card 1 -->
+        <div class="news-card">
+          <img src="images/home/news/news1.jpg" alt="News 1" class="news-image" />
+          <div class="news-content">
+            <p>
+              Today, we hosted the first conference on LLMs in medicine at
+              <a href="#">@katherlab</a> / <a href="#">@tudresden_de</a>, chaired by
+              <a href="#">@IsabellaWies</a>.
+            </p>
+            <div class="read-more-wrapper">
+              <a href="#" class="read-more-btn">READ MORE</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="news-card">
+          <img src="images/home/news/news2.jpg" alt="News 2" class="news-image" />
+          <div class="news-content">
+            <p>
+              New article led by <a href="#">@zigutyte</a> explores AI diagnostics in liver research,
+              highlighted at <a href="#">@EASLnews</a>.
+            </p>
+            <div class="read-more-wrapper">
+              <a href="#" class="read-more-btn">READ MORE</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="news-card">
+          <img src="images/home/news/news3.jpg" alt="News 3" class="news-image" />
+          <div class="news-content">
+            <p>
+              Our team was featured in a keynote about deep learning in pathology.
+              Thanks <a href="#">@medai_conf</a>!
+            </p>
+            <div class="read-more-wrapper">
+              <a href="#" class="read-more-btn">READ MORE</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="news-card">
+          <img src="images/home/news/news4.jpg" alt="News 4" class="news-image" />
+          <div class="news-content">
+            <p>
+              We published a new method to improve precision oncology predictions.
+              Available on <a href="#">bioRxiv</a>.
+            </p>
+            <div class="read-more-wrapper">
+              <a href="#" class="read-more-btn">READ MORE</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="news-card">
+          <img src="images/home/news/news5.jpg" alt="News 5" class="news-image" />
+          <div class="news-content">
+            <p>
+              Our lab is growing! Welcome to our new PhD candidates and postdocs 🚀
+            </p>
+            <div class="read-more-wrapper">
+              <a href="#" class="read-more-btn">READ MORE</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="news-card">
+          <img src="images/home/news/news6.jpg" alt="News 6" class="news-image" />
+          <div class="news-content">
+            <p>
+              Interview with Dr. Kather on the role of AI in clinical trials featured on
+              <a href="#">Nature Digital Medicine</a>.
+            </p>
+            <div class="read-more-wrapper">
+              <a href="#" class="read-more-btn">READ MORE</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-arrow right">&#10095;</button>
+  </div>
+</section>
+
+
+
+<!-- Research Section -->
+  <section class="research-section">
+    <h2 class="section-title">Research</h2>
+  
+    <!-- Topic Navegation -->
+     
+    <div class="research-nav">
+      <button class="topic-btn active" data-index="0" data-icon="genomics">
+        <img src="images/icons/genomics-active.png" alt="Genomics" />
+      </button>
+      <div class="nav-line"></div>
+      <button class="topic-btn" data-index="1" data-icon="radiology">
+        <img src="images/icons/radiology.png" alt="Radiology" />
+      </button>
+      <div class="nav-line"></div>
+      <button class="topic-btn" data-index="2" data-icon="llm">
+        <img src="images/icons/llm.png" alt="LLMs" />
+      </button>
+      <div class="nav-line"></div>
+      <button class="topic-btn" data-index="3" data-icon="histopathology">
+        <img src="images/icons/histopathology.png" alt="Histopathology" />
+      </button>
+      <div class="nav-line"></div>
+      <button class="topic-btn" data-index="4" data-icon="swarm">
+        <img src="images/icons/swarm.png" alt="Swarm" />
+      </button>
+    </div>
+  
+    <!-- Carrusel de tarjetas -->
+    <div class="research-slider">
+      <div class="research-cards-wrapper">
+        
+        <!-- GENOMICS -->
+        <div class="research-card active">
+          <h3>Deep Learning for Genomics</h3>
+          <div class="collaborators">
+            <button onclick="location.href='team.html#person1'"><img src="images/home/people/p1.jpg" /></button>
+            <button onclick="location.href='team.html#person2'"><img src="images/home/people/p2.jpg" /></button>
+            <button onclick="location.href='team.html#person3'"><img src="images/home/people/p3.jpg" /></button>
+            <button onclick="location.href='team.html#person4'"><img src="images/home/people/p4.jpg" /></button>
+          </div>
+          <p>We map cancer biomarkers to phenotypes using histopathology and Deep Learning since 2018.</p>
+          <img src="images/home/genomics.jpg" class="main-image" alt="Genomics" />
+        </div>
+  
+        <!-- RADIOLOGY -->
+        <div class="research-card">
+          <h3>AI in Radiology</h3>
+          <div class="collaborators">
+            <button onclick="location.href='team.html#person5'"><img src="images/home/people/p5.jpg" /></button>
+            <button onclick="location.href='team.html#person6'"><img src="images/home/people/p6.jpg" /></button>
+            <button onclick="location.href='team.html#person7'"><img src="images/home/people/p7.jpg" /></button>
+            <button onclick="location.href='team.html#person8'"><img src="images/home/people/p8.jpg" /></button>
+          </div>
+          <p>AI systems assist in interpreting CT, MRI and X-rays to improve diagnosis accuracy.</p>
+          <img src="images/home/radiology.jpg" class="main-image" alt="Radiology" />
+        </div>
+  
+        <!-- LLMS -->
+        <div class="research-card">
+          <h3>Large Language Models (LLMs)</h3>
+          <div class="collaborators">
+            <button onclick="location.href='team.html#person9'"><img src="images/home/people/p9.jpg" /></button>
+            <button onclick="location.href='team.html#person10'"><img src="images/home/people/p10.jpg" /></button>
+            <button onclick="location.href='team.html#person11'"><img src="images/home/people/p11.jpg" /></button>
+            <button onclick="location.href='team.html#person12'"><img src="images/home/people/p12.jpg" /></button>
+          </div>
+          <p>We fine-tune and evaluate LLMs for clinical note understanding and generation.</p>
+          <img src="images/home/llms.jpg" class="main-image" alt="LLMs" />
+        </div>
+  
+        <!-- HISTOPATHOLOGY -->
+        <div class="research-card">
+          <h3>Histopathology Analysis</h3>
+          <div class="collaborators">
+            <button onclick="location.href='team.html#person13'"><img src="images/home/people/p13.jpg" /></button>
+            <button onclick="location.href='team.html#person14'"><img src="images/home/people/p14.jpg" /></button>
+            <button onclick="location.href='team.html#person15'"><img src="images/home/people/p15.jpg" /></button>
+            <button onclick="location.href='team.html#person16'"><img src="images/home/people/p16.jpg" /></button>
+          </div>
+          <p>Histopathology slides are analyzed with computer vision for diagnosis and grading.</p>
+          <img src="images/home/histo.jpg" class="main-image" alt="Histopathology" />
+        </div>
+  
+        <!-- SWARM -->
+        <div class="research-card">
+          <h3>Swarm Learning</h3>
+          <div class="collaborators">
+            <button onclick="location.href='team.html#person17'"><img src="images/home/people/p17.jpg" /></button>
+            <button onclick="location.href='team.html#person18'"><img src="images/home/people/p18.jpg" /></button>
+            <button onclick="location.href='team.html#person19'"><img src="images/home/people/p19.jpg" /></button>
+            <button onclick="location.href='team.html#person20'"><img src="images/home/people/p20.jpg" /></button>
+          </div>
+          <p>Decentralized AI training without central data storage – privacy-preserving learning.</p>
+          <img src="images/home/swarm.jpg" class="main-image" alt="Swarm" />
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
