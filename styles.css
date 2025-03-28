@@ -1,0 +1,710 @@
+/* ========== IMPORT FONTS ========= */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* ========== RESET & BASE STYLES ========= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ========== NAVBAR ========= */
+/* Navbar container */
+.navbar {
+  position: fixed;
+  width: 100%;
+  background: white;
+  padding: 25px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Navigation links (desktop) */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center;
+}
+
+/* Navigation link styles */
+.nav-links li a {
+  text-decoration: none;
+  color: #111;
+  font-weight: bold;
+  padding: 12px 8px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #5215fc;
+}
+
+/* Contact button within navbar (desktop) */
+.nav-links li .contact-btn {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 12px 8px;
+  display: inline-block;
+}
+
+/* Logo */
+.logo img {
+  height: 40px; /* Adjust as needed */
+  width: auto;
+  object-fit: contain;
+}
+
+/* ========== CONTACT BUTTON (DESKTOP) ========= */
+.contact-btn {
+  background-color: #5215fc;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  line-height: 1;
+  min-width: 150px;
+}
+
+.contact-btn:hover {
+  background-color: #3d0fcc;
+}
+
+/* ========== MENU TOGGLE (HAMBURGER ICON) ========= */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ========== HERO SECTION ========= */
+/* Hero container */
+.hero.centered {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+}
+
+/* Background carousel */
+.background-carousel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.background-carousel img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+.background-carousel img.active {
+  display: block;
+}
+
+/* Carousel overlay */
+.background-carousel .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+/* Hero content */
+.hero-content {
+  z-index: 2;
+  max-width: 600px;
+  padding: 20px;
+  color: #12043e;
+}
+
+/* ========== HERO CONTENT TYPOGRAPHY ENHANCEMENTS ========= */
+.hero-content h4 {
+  color: #f0f0f0; /* Soft white-grey */
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.hero-content h1 {
+  font-size: 56px;
+  font-weight: 900; /* Bolder KATHER LAB */
+  color: white;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.hero-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #f2f2f2; /* Light text to match the overlay */
+  margin-bottom: 24px;
+}
+
+
+/* ========== BUTTONS ========= */
+.btn-box {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* General button style */
+.btn-box .btn {
+  position: relative;
+  background-color: #5215fc;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.btn-box .btn:hover {
+  background-color: #3d0fcc;
+}
+
+/* GitHub button variant */
+.btn-box .btn.github {
+  background-color: #C4C7D8;
+  color: #12043e;
+}
+
+.btn-box .btn.github:hover {
+  background-color: #AEB1C2;
+  color: #12043e;
+}
+
+/* Loading indicator for buttons */
+.btn-box .btn::before {
+  content: '';
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  margin-top: -12px;
+  width: 24px;
+  height: 24px;
+  border: 2px solid;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.5s;
+  animation: 0.8s linear infinite rotate;
+}
+
+.btn-box .btn.sending {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.btn-box .btn.sending::before {
+  opacity: 1;
+  transition-delay: 0.5s;
+  transition-duration: 1s;
+}
+
+/* Rotation keyframes */
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ========== INDICATORS ========= */
+.indicators {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 6px;
+  background-color: #ffff;
+  border-radius: 50%;
+  display: inline-block;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.dot.active {
+  width: 35px;
+  border-radius: 16px;
+  background-color: #5f4ef1;
+}
+
+/* ========== NEWS SECTION (CAROUSEL OF CARDS) ========= */
+.news-section {
+  padding: 80px 5%;
+  background: #f8f9fc;
+}
+
+.news-section .section-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 50px;
+  color: #12043e;
+}
+
+/* Container for carousel controls (arrows) */
+.news-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* Carousel wrapper */
+.news-carousel-wrapper {
+  overflow: hidden;
+  flex: 1;
+}
+
+/* News cards carousel */
+.news-cards-carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: 30px;
+}
+
+/* Individual news card */
+.news-card {
+  flex: 0 0 calc(25% - 22.5px); /* 4 cards with gap */
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-4px);
+}
+
+.news-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* News card content */
+.news-content {
+  padding: 20px;
+  font-size: 16px;
+  color: #333;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.news-content p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.news-content a {
+  color: #5215fc;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Read more button */
+.read-more-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.read-more-btn {
+  padding: 10px 20px;
+  border: 2px solid #5215fc;
+  border-radius: 30px;
+  color: #5215fc;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background-color: #5215fc;
+  color: white;
+}
+
+/* Carousel arrows */
+.carousel-arrow {
+  font-size: 28px;
+  background: white;
+  border: 2px solid #5215fc;
+  color: #5215fc;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.carousel-arrow:hover {
+  background-color: #5215fc;
+  color: white;
+}
+
+/* ========== RESPONSIVE NEWS SECTION ========= */
+@media (max-width: 768px) {
+  /* Stack news cards vertically */
+  .news-carousel-controls {
+    flex-direction: column;
+  }
+
+  .news-cards-carousel {
+    display: block; /* Disable horizontal flex layout */
+    overflow-x: visible;
+    gap: 20px;
+  }
+
+  .news-card {
+    width: 100%;
+    margin-bottom: 20px;
+    /* Eliminar scroll-snap properties ya que no se usan en vertical */
+    scroll-snap-align: unset;
+    min-width: auto;
+  }
+
+  /* Adjust image height and content spacing for better mobile view */
+  .news-image {
+    height: 150px; /* Puedes ajustar este valor según tu preferencia */
+  }
+
+  .news-content {
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .read-more-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  /* Hide carousel arrows in mobile vertical layout */
+  .carousel-arrow {
+    display: none;
+  }
+}
+
+
+/* ========== RESEARCH SECTION ========= */
+.research-section {
+  padding: 80px 5%;
+  background: #f8f9fc;
+}
+
+.research-section .section-title {
+  text-align: center;
+  font-size: 32px;
+  color: #12043e;
+  margin-bottom: 40px;
+}
+
+/* Research navigation icons */
+.research-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+/* Topic button (research) */
+.topic-btn {
+  background: #fff;
+  border: 3px solid #bbb;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.topic-btn img {
+  width: 28px;
+  height: 28px;
+  filter: grayscale(100%) brightness(0.6);
+  transition: filter 0.3s ease;
+}
+
+.topic-btn.active,
+.topic-btn:hover {
+  background: #5215fc;
+  border-color: #5215fc;
+}
+
+.topic-btn.active img,
+.topic-btn:hover img {
+  filter: none;
+}
+
+/* Navigation line (research) */
+.nav-line {
+  height: 3px;
+  width: 40px;
+  background-color: #bbb;
+  transition: background-color 0.3s;
+}
+
+/* Research slider */
+.research-slider {
+  overflow: hidden;
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.research-cards-wrapper {
+  display: block;
+}
+
+/* Research card styling */
+.research-card {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 16px;
+  background-color: #f8f9fc;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border: none;
+  box-shadow: none;
+}
+
+.research-card h3 {
+  font-size: 26px;
+  color: #12043e;
+  margin-bottom: 16px;
+}
+
+/* Research card default state */
+.research-card {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: none;
+}
+
+.research-card.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Collaborators in research section */
+.collaborators {
+  display: flex;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.collaborators button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.collaborators button:hover {
+  transform: scale(1.1);
+}
+
+.collaborators img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+.collaborators button:hover img {
+  border-color: #5215fc;
+}
+
+/* Research card content */
+.research-card p {
+  color: #444;
+  font-size: 17px;
+  line-height: 1.7;
+  margin-top: 16px;
+}
+
+.research-card .main-image {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Responsive adjustments for research section */
+@media (max-width: 768px) {
+  .research-cards-wrapper {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .research-card {
+    width: 100%;
+    padding: 24px;
+  }
+
+  .topic-btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .topic-btn img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .nav-line {
+    width: 20px;
+  }
+
+  .collaborators {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* ========== MOBILE MENU STYLES ========= */
+@media (max-width: 768px) {
+  /* Navigation links (mobile dropdown) */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    right: 0;
+    top: 70px;
+    width: 200px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 20px 15px;
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  /* Show menu when active */
+  .nav-links.show {
+    display: flex;
+  }
+
+  /* Nav link text styling for mobile */
+  .nav-links li a {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 0;
+    color: #12043e;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links li a:hover {
+    color: #5215fc;
+  }
+
+  /* Menu toggle icon for mobile */
+  .menu-toggle {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    color: #5215fc;
+  }
+
+  /* Contact button in mobile menu should look like a regular link */
+  .nav-links li .contact-btn {
+    background: none;
+    color: #12043e;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    min-width: auto;
+    height: auto;
+    text-align: left;
+  }
+
+  .nav-links li .contact-btn:hover {
+    color: #5215fc;
+    background: none;
+  }
+
+  /* Keyframes for slide down animation */
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
